@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /springboot-nacos
+spring:
+  cloud:
+    nacos:
+      config:
+        prefix: ${spring.application.name}
+        server-addr: http://192.168.0.92:8848
+        username: nacos
+        password: nacos
+        namespace: ee541e42-84a1-48b9-86c4-4eb299f645be
+        group: DEFAULT_GROUP
+        file-extension: yml
+        extension-configs:
+          - data-id: cache.yml
+            group: DEFAULT_GROUP
+            refresh: true
+        shared-configs:
+        refresh-enabled: true
+      discovery:
+        server-addr: http://192.168.0.92:8848
+        username: nacos
+        password: nacos
+        group: DEFAULT_GROUP
+        namespace: ee541e42-84a1-48b9-86c4-4eb299f645be
+
