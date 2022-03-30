@@ -1,6 +1,7 @@
 package me.star.springboot_nacos.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2022/3/4
  */
 @RestController
-@RefreshScope   // 动态刷新
 public class NacosController {
+
+//    @Value(value = "${aa}")
+//    private String aa;
+//
+//    @GetMapping(value = "aa")
+//    public String aa() {
+//        return aa;
+//    }
 
     @Autowired
     private RedisTemplate redisTemplate;
